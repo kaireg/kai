@@ -1,0 +1,54 @@
+﻿1.安装kali 设置更新源无法更新问题  
+添加kali linux开发源
+deb http://http.kali.org/kali kali-dev main contrib non-free
+deb http://http.kali.org/kali kali-dev main/debian-installer
+deb-src http://http.kali.org/kali kali-dev main contrib non-free
+
+2.安装中文输入法 
+apt-get install fcitx fcitx-googlepinyin
+
+3.安装chrome浏览器
+dpkg -i chrome.deb
+apt-get -f install  解决包依赖问题
+--no-sandbox --user-data-dir &
+chrome flash 问题
+把flash文件复制到～/.config/google-chrome/PepperFlash/  下面
+重启chrome
+
+4.汉化firefox-esr 
+apt-get install iceweasel-l10n-zh-cn
+
+5.sublime text 3 问题	
+"update_check":false,
+"caret_extra_top" : 1 ,
+"caret_extra_bottom" : 1 ,
+"caret_extra_width" : 1,
+
+—– BEGIN LICENSE —–
+Michael Barnes
+Single User License
+EA7E-821385
+8A353C41 872A0D5C DF9B2950 AFF6F667
+C458EA6D 8EA3C286 98D1D650 131A97AB
+AA919AEC EF20E143 B361B1E7 4C8B7F04
+B085E65E 2F5F5360 8489D422 FB8FC1AA
+93F6323C FD7F7544 3F39C318 D95E6480
+FCCC7561 8A4A1741 68FA4223 ADCEDE07
+200C25BE DBBC4855 C4CFB774 C5EC138C
+0FEC1CEF D9DCECEC D3A5DAD1 01316C36
+—— END LICENSE ——
+
+6.mbrfix修复启动项
+MbrFix /drive 0 fixmbr
+
+7.设置开机自动登录
+gedit /etc/gdm3/daemon.conf
+
+8.主题
+copy 主题到 /usr/share/themes
+
+9.字体
+apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy
+
+
+
