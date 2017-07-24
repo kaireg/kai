@@ -1,0 +1,5 @@
+nmap -iL liu.txt >>kai.txt 
+扫描liu.txt中的ip地址，将结果追加到kai.txt中
+
+nmap -p80,22,23 192.168.1.1 >>kai.txt
+扫描指定ip的指定端口 ....
