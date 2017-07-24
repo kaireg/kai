@@ -50,5 +50,8 @@ copy 主题到 /usr/share/themes
 9.字体
 apt-get install ttf-wqy-microhei ttf-wqy-zenhei xfonts-wqy
 
+10.conky设置
+apt-get install conky
+cp conky /root/.conkyrc 
 
 

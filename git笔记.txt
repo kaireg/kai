@@ -5,4 +5,12 @@ git config --global user.email "13125179586@163.com"
 2.clone github远程仓库
 git clone https://github.com/kaireg/liu.git
 
-3.
+4.提交更新到缓存
+git add .   提交所有更新
+git add xxx.xx 提交某一个文件的更新
+
+5.将缓存提交到仓库
+git commit -m "first commit"
+
+3.本地代码push到远程仓库
+git push origin master
