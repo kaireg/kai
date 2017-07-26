@@ -1,0 +1,39 @@
+#创建一个django工程
+django-admin.py startproject [projectname]
+
+#创建一个app
+django-admin.py startapp [appname]
+
+#同步数据库
+python manage.py syncdb
+
+1.7及以上版本需要以下命令
+python manage.py makemigrations
+python manage.py migrate 
+
+#运行django
+python manage.py runserver    #默认8000端口
+
+python manage.py runserver 8001  #修改端口号可以直接加上端口号
+python manage.py runserver 0.0.0.0:8000    #ip:端口号可以指定特定的ip和端口号
+
+#清空数据库
+python manage.py flush
+
+#创建超级管理员用户
+python manage.py creatsuperuser 
+
+#修改用户密码
+python manage.py changeppassword [username]
+
+#导出数据库
+python manage.py dumpdata [appname] > appname.json
+
+#导入数据库
+python manage.py loaddata appname.json
+
+#项目环境终端
+python manage.py shell
+
+#数据库命令行
+python manage.py dbshell

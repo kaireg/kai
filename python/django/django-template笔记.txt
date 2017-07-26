@@ -1,0 +1,20 @@
+#模板继承
+
+nar													{% extends 'index.html'%}   #继承index页面
+{% block page-content %} 
+													{% block page-content %}    #屏蔽了继承页面的内容
+内容
+													内容 					
+{% endblock %}
+
+footer												{% endblock %}
+
+
+
+#模板标签																
+{% for i in list %}						{%if i == 0 %}
+												pass
+{{ i }}  #取循环里的值，要两个花括号		{% else%}
+			
+{% endfor %}								{% endif %}
+

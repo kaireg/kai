@@ -1,0 +1,32 @@
+安装：  
+yum list mysql server
+apt-get .......
+
+自启动：
+chkconfig mysqld on
+
+开放3306端口：
+vim /etc/sysconfig/iptables 
+加入3306端口
+
+初次登陆mysql：
+mysql -uroot -p
+进入mysql
+use mysql
+update user set password=password('密码') where user='root';   #更改密码同理
+flush privileges;   #命令刷新刚才修改的权限，使其生效。
+
+远程登录mysql:
+mysql -h主机地址 -P3306 -u用户名 -p
+
+为mysql开启远程连接
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO '用户名'@'%' IDENTIFIED BY '密码' WITH GRANT OPTION
+
+#修改mysql默认字符集
+打开my.cnf以后，在[client]和[mysqld]下面均加上default-character-set=utf8
+
+#mysql创建用户
+insert into mysql.user(Host,User,Password) values("%","username",password("password"));
+insert into mysql.user(Host,User,Password) values("%","username",password("password"));	
+														设置为任意一台主机都可以登录
