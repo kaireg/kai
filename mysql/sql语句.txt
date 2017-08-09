@@ -1,0 +1,80 @@
+
+#查看有那些数据库
+show databases;
+
+#连接名为test的数据库
+use test；
+
+#sql都大写  ，自己定义的名称或者其他的东西小写， 这样方便识别!
+
+#创建一个新的数据库
+create database bbs;
+create database 新数据库名；
+
+#创建一张学生表；
+create table stu(id int(10),  #id字段  最大10位整型
+    	name varchar(20),   #name字段   最大20位字符串类型
+	age int（10），     #age字段    最大10位整型
+	primary key(id));   #每张表需要包含一个主键，
+主键是唯一标识的一条记录，唯一的字段，不可重复不能为空.
+通过primary key()来定义。
+
+#查看创建好的表
+show create tables stu;
+show create tables 表名;
+
+#增加一个新的字段
+alter table stu add column gander varchar(20);
+alter table 表名 add column 字段名 列类型;
+
+#修改一个字段
+alter table stu modify column gander varchar(30);
+alter table 表名 modify column 字段名 列类型；
+
+#删除一个字段
+alter table stu drop column gander;
+alter table 表名 drop column 字段名;
+
+#删除表
+drop table stu;
+drop table 表名;
+
+#查看当前数据库中的表
+show tables;
+
+#向表中插入数据
+insert into stu(id,name,age) values(1,'pw',28);
+insert into 表名(字段名) values(字段值)
+
+#插入全部字段时可以只写表名
+insert into stu values(2,'nss',29);
+insert into 表民 values(字段值)
+
+#查询表中的数据
+select * from stu;    # *表示查询全部字段
+select name,age from stu;   #字段间用,隔开
+select 字段名 from 表名
+
+#也可以根据条件进行查询
+select name age from stu where id=1;
+select 字段名 from 表名 where 条件(···)
+
+#更新语句
+update stu set age=29 where id=1;
+update 表名 set 更新的字段名，值 where 主键(其他也可以)
+
+#删除表中的数据
+delete from stu where id=1;
+delest from 表名 where 主键(其他值也可以) 
+
+#where 句子
+select * from teacher where addr="hangzhou" and sex="male"
+select 你想要的信息 from 数据表表名(可以多个) where 满足的条件(条件判断) 
+ 
+
+
+
+
+
+
+

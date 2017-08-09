@@ -67,8 +67,8 @@ ${color #00ff1e}/home 分区: ${color}${alignr}${fs_used /home}/ ${fs_size /home
 ${color #78af78}${fs_bar 8 /home}
 ${color #ffd700}${stippled_hr 1}$color
 ${font Microsoft YaHei:pixelsize=12}
-${color #00ff1e}网络 $alignr ${color #00ff1e}IP地址: ${color DDAA00}${addr enp8s0}
-${voffset 1}${color #98c2c7} 上传: ${color #db7093}${upspeed enp8s0}/s ${alignr}${color #98c2c7}总共: ${color #db7093}${totalup enp8s0}
-${voffset 1}${color #98c2c7} 下载: ${color #ddaa00}${downspeed enp8s0}/s ${alignr}${color #98c2c7}总共: ${color #ddaa00}${totaldown enp8s0}
+${color #00ff1e}网络 $alignr ${color #00ff1e}IP地址: ${color DDAA00}${addr eth0}
+${voffset 1}${color #98c2c7} 上传: ${color #db7093}${upspeed eth0}/s ${alignr}${color #98c2c7}总共: ${color #db7093}${totalup eth0}
+${voffset 1}${color #98c2c7} 下载: ${color #ddaa00}${downspeed eth0}/s ${alignr}${color #98c2c7}总共: ${color #ddaa00}${totaldown eth0}
 ${font Microsoft YaHei:pixelsize=12}
 ${color #ffa200}${hr 2}
